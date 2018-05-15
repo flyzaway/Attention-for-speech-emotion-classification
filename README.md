@@ -1,5 +1,7 @@
 # Attention-for-speech-emotion-classification
-# 使用LSTM-Attention/GRU-attention在Casia库中实现语音情感识别，做最简单的特征提取后，获得可最好可以达到89%多
+
+----
+使用LSTM-Attention/GRU-Attention在Casia库中实现语音情感识别
 ----
 ## 文件介绍
 1. casia 按情感类型放入数据，casia全库需要保密，这里不予提供
