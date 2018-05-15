@@ -36,7 +36,7 @@ def load_data(data_base,window,data_path):
     
     else:
         if not os.path.exists(data_path): 
-            if data_base == "enterface":
+            if data_base == "enterface": #这是另一个语音情感数据库，这里不需要管他
                 read_enterface_feature(window)
             else:
                 read_all_feature(window)
@@ -48,7 +48,7 @@ def load_data(data_base,window,data_path):
     
     return data,data_label
 def cross_validate(n = 5):
-    data,data_label = load_data()
+    data,data_label = load_data()data_base,window,data_path)
     print data.shape
     data_label = data_label.reshape(data_label.shape[0])
     print data_label.shape

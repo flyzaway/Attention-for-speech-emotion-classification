@@ -12,13 +12,14 @@ import numpy as np
 import gc
 import h5py
 #anger_feat = feature.get_feature_from_python_speech_features("E:/casia_all/anger/anger001.wav")
+#实现了两种特征提取的方式，使用的是read_all_feature()
 def read_all_feature(window): 
-    anger_feat,max_len1= read_wav("./casia_all/anger/",window)       
-    fear_feat,max_len2= read_wav("./casia_all/fear/",window)
-    happy_feat,max_len3 = read_wav("./casia_all/happy/",window)
-    neutral_feat,max_len4 = read_wav("./casia_all/neutral/",window)
-    sad_feat,max_len5 = read_wav("./casia_all/sad/",window)
-    surprise_feat,max_len6 = read_wav("./casia_all/surprise/",window)
+    anger_feat,max_len1= read_wav("./casia/anger/",window)       
+    fear_feat,max_len2= read_wav("./casia/fear/",window)
+    happy_feat,max_len3 = read_wav("./casia/happy/",window)
+    neutral_feat,max_len4 = read_wav("./casia/neutral/",window)
+    sad_feat,max_len5 = read_wav("./casia/sad/",window)
+    surprise_feat,max_len6 = read_wav("./casia/surprise/",window)
     maxlen = max([max_len1,max_len2,max_len3,max_len4,max_len5,max_len6])
     print maxlen
     anger = []
@@ -92,7 +93,7 @@ def read_all_feature(window):
     gc.collect()
     
     #save as npy
-    np.savez("data.npz",data,data_label)
+    np.savez("./pkl/data.npz",data,data_label)
     
     #save as h5py
     #f = h5py.File('data.h5','w')
@@ -105,6 +106,7 @@ def read_all_feature(window):
     #cPickle.dump([data,data_label],wf)
     #wf.close()
     #return data,data_label
+
 def read_mult_feature(window,mult):
     anger,max_len1= read_wav("./casia/anger/",window,mult)       
     fear,max_len2= read_wav("./casia/fear/",window,mult)
@@ -139,6 +141,6 @@ def read_mult_feature(window,mult):
     f.close()
     
 if __name__ == '__main__':
-    #read_all_feature(window=512)
-    read_mult_feature(window=512,mult=True)
+    read_all_feature(window=512)
+    #read_mult_feature(window=512,mult=True)
 

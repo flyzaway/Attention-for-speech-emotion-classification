@@ -5,7 +5,7 @@ Created on Fri Jan 26 21:49:30 2018
 
 @author: flyaway
 """
-
+#实现的callbacks
 from keras.callbacks import Callback
 import numpy as np
 class PredictEpoch(Callback):

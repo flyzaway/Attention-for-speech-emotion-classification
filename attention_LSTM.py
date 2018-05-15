@@ -104,6 +104,7 @@ class Attention_layer(Layer):
     def compute_output_shape(self,input_shape):
         return (input_shape[0],input_shape[-1])
 
+#该类未实现
 class Direction_Attention_layer(Layer):
     def __init__(self,
                  W_regularizer = None,

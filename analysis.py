@@ -5,7 +5,7 @@ Created on Mon Apr 23 15:47:21 2018
 
 @author: flyaway
 """
-
+#做特征可视化的类
 import sys
 
 reload(sys)
